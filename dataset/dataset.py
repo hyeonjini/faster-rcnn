@@ -9,7 +9,7 @@ from albumentations.pytorch.transforms import ToTensorV2
 from torch.utils.data import Dataset
 from pycocotools.coco import COCO
 
-class COCODataset(Dataset):
+class COCODTrain(Dataset):
     def __init__(self, annotations, data_dir, transform):
 
         super().__init__()
@@ -62,7 +62,7 @@ class COCODataset(Dataset):
     def __len__(self) -> int:
         return len(self.image_ids)
 
-class COCODatasetTest(COCODataset):
+class COCOTest(COCODataset):
     def __init__(self, annotations, data_dir, transform):
         super().__init__(annotations, data_dir, transform)
 
